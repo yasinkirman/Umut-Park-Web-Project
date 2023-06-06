@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<section id="featured" style="background-color: lightblue">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                @{
+                    Html.RenderAction("SliderPartial", "Home");
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<section id="content" style="background-color: lightblue">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="solidline">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @{
+                Html.RenderAction("HizmetPartial", "Home");
+            }
+        </div>
+    </div>
+</section>

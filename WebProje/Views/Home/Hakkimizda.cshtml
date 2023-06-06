@@ -1,0 +1,15 @@
+﻿@model WebProje.Models.Model.Hakkimizda
+@{
+    ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div class="container">
+    <div class="col-md-12">
+        <h4>Umut Park Hakkında</h4>
+        <img src="@Model.ResimURL" alt="" class="align-center img-box img-responsive" />
+        <p>
+            @Html.Raw(Model.Aciklama)
+        </p>
+    </div>
+</div>

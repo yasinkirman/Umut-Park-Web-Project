@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WebProje.Models.Model.Iletisim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İletişim</h2>
+
+<p>
+    <a href="/Iletisim/Create/" class="btn btn-default">Yeni Ekle</a>
+</p>
+<table class="table table-bordered table-striped table-responsive-sm">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Adres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Whatsapp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Instagram)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Facebook)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            İşlemler
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Whatsapp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Instagram)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Facebook)
+        </td>
+        <th>
+            @Html.DisplayFor(modelitem => item.Email)
+        </th>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id = item.IletisimId }) |
+            @Html.ActionLink("Detaylar", "Details", new { id = item.IletisimId }) |
+            @Html.ActionLink("Sil", "Delete", new { id = item.IletisimId })
+        </td>
+    </tr>
+}
+
+</table>
